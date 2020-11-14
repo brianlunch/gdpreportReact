@@ -1,0 +1,18 @@
+.headerItem{
+    background-color: #fff;
+    padding: 2%;
+    border: 1.75px solid rgb(174, 174, 174);
+    border-radius: 2%;
+    margin-bottom: 5%;
+    height: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    -webkit-transition: .3s;
+    transition: .3s;
+    height: 100%;
+}
+
+.headerItem:hover{
+    transform: scale(1.1);  
+    border: 1.75px solid rgb(150, 150, 150);
+    cursor: pointer;
+}
