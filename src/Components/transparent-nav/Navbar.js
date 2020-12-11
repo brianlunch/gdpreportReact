@@ -32,7 +32,7 @@ const Nav = ({user}) => {
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
-          if (currPos.y<-10){
+          if (currPos.y<30){
             setClassThree('navbar navbar-expand-lg fixed-top  active ')
           }else{
             setClassThree('navbar navbar-expand-lg fixed-top ')
@@ -44,7 +44,7 @@ const Nav = ({user}) => {
     return (
     <nav className={classThree}>
         <div className="container">
-            
+            <h2>GDPReport</h2>
             <button  onClick={toggleNavbar} className={`${classTwo}`} type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <FaBars size={20} color="black"/>
             </button>

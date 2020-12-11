@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 import Annotation from 'react-image-annotation'
 import AnnotationIssues from '../AnnotationIssues/AnnotationIssues';
 import './ImageAnnotation.css'
+import {
+    PointSelector,
+    RectangleSelector,
+    OvalSelector
+} from 'react-image-annotation/lib/selectors'
+
 var count = 0;
+
 
 const Box = ({ children, geometry, style }) => (
     <div
@@ -19,45 +26,90 @@ const Box = ({ children, geometry, style }) => (
     </div>
 )
 
-function renderSelector({ annotation, active }) {
+function renderSelector({ annotation, active, type }) {
     const { geometry } = annotation
     if (!geometry) return null
 
-    return (
-        <Box
-            geometry={geometry}
-            style={{
-                background: 'rgba(255, 255, 255, 0.5)',
-                border: 'solid 1px red'
-            }}
-        >
-        </Box>
-    )
+    
+
+    if (geometry.type == RectangleSelector.TYPE) {
+        return (
+
+            <Box
+                geometry={geometry}
+                style={{
+                    background: 'rgba(255, 255, 255, 0.5)',
+                    border: 'solid 1px red'
+                }}
+            >
+            </Box>
+        )
+    }
+    if (geometry.type == PointSelector.TYPE) {
+        return (
+
+            <Box
+                geometry={geometry}
+                style={{
+                    background: 'rgba(255, 255, 255, 0.5)',
+                    border: 'solid 10px green'
+                }}
+            >
+            </Box>
+        )
+    }
 }
 
 function renderHighlight({ annotation, active }) {
     const { geometry } = annotation
     if (!geometry) return null
+    if (geometry.type == RectangleSelector.TYPE) {
+        return (
+            <Box
+                key={annotation.data.id}
+                geometry={geometry}
+                style={{
+                    border: 'solid 3px lime',
+                    background: 'rgba(255, 255, 255, 0.3)',
+                    boxShadow: active
+                        && 'inset 0 0 0 5px red',
+                    color: active
+                        && 'red',
+                    fontSize: active && 20
 
-    return (
-        <Box
-            key={annotation.data.id}
-            geometry={geometry}
-            style={{
-                border: 'solid 3px lime',
-                background: 'rgba(255, 255, 255, 0.3)',
-                boxShadow: active
-                    && 'inset 0 0 0 5px red',
-                    
-            }}
-        >
-            {annotation.data.text}
-        </Box>
-    )
+                }}
+            >
+                {annotation.data.text}
+            </Box>
+        )
+    }
+    else {
+        return (
+            <Box
+                key={annotation.data.id}
+                geometry={geometry}
+                style={{
+                    border: 'solid 5px lime',
+                    height: 10,
+                    color: 'lime',
+                    width: 10,
+                    backgroundColor: 'lime',
+                    boxShadow: active
+                        && 'inset 0 0 0 5px red',
+                    color: active
+                        && 'red',
+                    fontSize: active && 30
+
+                }}
+            >
+                {annotation.data.text}
+            </Box>
+        )
+    }
 }
 
 //On Hover
-function renderContent({ annotation }) { return;}
+function renderContent({ annotation }) { return; }
 /*
 function renderContent({ annotation }) {
     const { geometry } = annotation
@@ -94,8 +146,9 @@ function renderEditor(props) {
                 left: `${geometry.x}%`,
                 top: `${geometry.y + geometry.height}%`,
             }}
+            className="text-left bg-white"
         >
-
+            <br></br>
             <button className="btn btn-outline-dark"
                 onClick={e => props.onChange({
                     ...props.annotation,
@@ -124,16 +177,31 @@ function renderOverlay() {
                 left: 5
             }}
         >
-            Custom Overlay
+
         </div>
     )
 }
 
 export default class ImageAnnotation extends Component {
-    state = {
-        annotations: [],
-        annotation: {},
-        activeAnnotations: []
+
+
+    constructor(props) {
+        super(props);
+        this.state = { annotations: [],
+            annotation: {},
+            activeAnnotations: [],
+            issues: [],
+            idk:[]
+        };
+    }
+    
+       
+     
+    componentDidUpdate(prevProps) {
+        // Typical usage (don't forget to compare props):
+        if (this.props.img !== prevProps.img) {
+            this.clearAll();
+        }
     }
 
     onMouseOver = (id) => e => {
@@ -156,10 +224,17 @@ export default class ImageAnnotation extends Component {
         })
     }
 
+    clearAll = () => {
+        count = 0;
+        this.setState({
+            annotations: [],
+            issues: []
+        })
+    }
+
     activeAnnotationComparator = (a, b) => {
         return a.data.id === b
     }
-
 
     onSubmit = (annotation) => {
         const { geometry, data } = annotation
@@ -179,10 +254,7 @@ export default class ImageAnnotation extends Component {
 
     onChange = (annotation, func) => {
         this.setState({ annotation }, func)
-
     }
-
-
 
     onChangeType = (e) => {
         this.setState({
@@ -192,10 +264,32 @@ export default class ImageAnnotation extends Component {
     }
 
     render() {
+        
         return (
-            <div>
-                <div class="row">
+            <div className="">
+                <div class="row annotateRow">
                     <div class="col-9">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Highlight Problem Areas</h2>
+                            </div>
+                            <div class="col-2">
+                                <button className="btn btn-outline-dark" onClick={this.clearAll}>Clear All</button>
+                            </div>
+                            {/*
+                            <div class="col-2">
+                                <button className="btn btn-outline-dark" onClick={this.onChangeType}>
+                                    {RectangleSelector.TYPE}
+                                </button>
+                            </div>
+                            <div class="col-2">
+                                <button className="btn btn-outline-dark" onClick={this.onChangeType}>
+                                    {PointSelector.TYPE}
+                                </button>
+                            </div>
+                            */
+                            }
+                        </div>
                         <Annotation
                             src={this.props.img}
                             alt='Two pebbles anthropomorphized holding hands'
@@ -214,23 +308,19 @@ export default class ImageAnnotation extends Component {
                             renderOverlay={renderOverlay}
                         />
                     </div>
-                    <div class="col-3 text-left">
+                    <div class="col-3  text-left">
                         <h4>Annotations</h4>
-                        
-                           <AnnotationIssues annotations={this.state.annotations} 
-                           activeAnnotations={this.state.activeAnnotations} 
-                           onMouseOver={this.onMouseOver}
-                           onMouseOut={this.onMouseOut}
-                           />
+                        <AnnotationIssues
+                            className=""
+                            annotations={this.state.annotations}
+                            activeAnnotations={this.state.activeAnnotations}
+                            issues={this.state.issues}
+                            onMouseOver={this.onMouseOver}
+                            onMouseOut={this.onMouseOut}
+                        />
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
         )
     }
 }

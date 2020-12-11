@@ -1,69 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './AnnotationIssues.css'
+import Collapse from 'react-bootstrap/Collapse'
+import { FaChevronDown, FaLessThanEqual } from 'react-icons/fa';
+import AnnotationIssue from '../AnnotationIssue/AnnotationIssue';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer'
+import ReactPDF from '@react-pdf/renderer'; 	    
+import MyDocument from '..//PDFgen/PDFgen'
 
 
-class AnnotationIssues extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.handleMouseOver = this.handleMouseOver.bind(this)
-        this.handleMouseOut = this.handleMouseOut.bind(this)
+
+function onMouseOver(props, key) {
+    props.onMouseOver(key);
+}
+
+function printTing(props){
+    console.log("hello");
+}
+
+function onMouseOut(props, key) {
+    props.onMouseOut(key);
+}
+
+
+
+function handleSubmit() {
+
+}
+
+function setOpen(){
+
+}
+function checkOpen(props){
+    console.log("ye");
+    if(props.issues.length !=0){
+    console.log(props.issues[0].open);
+    return props.issues[0].open;
     }
+}
 
-    handleMouseOver(key) {
-        this.props.onMouseOver(key);
-    }
+function AnnotationIssues(props) {
+    
+    
+    return (
+        <div>
 
-    handleMouseOut(key) {
-        this.props.onMouseOut(key);
-    }
+            {props.annotations.map(annotation => (
+                <div>
+                    <AnnotationIssue annotation={annotation} 
+                    mouseOver={props.onMouseOver} 
+                    mouseOut={props.onMouseOut} 
+                    issues={props.issues}
+                    />
+                </div>
+            ))}
 
-    render() {
-        return (
-            <div>
 
-                {this.props.annotations.map(annotation => (
-                    <div
-                        onMouseOver={this.props.onMouseOver(annotation.data.id)}
-                        onMouseOut={this.props.onMouseOut(annotation.data.id)}
-                        key={annotation.data.id}
-                        className="annotationIssue"
-                    >
-                        <h3>{annotation.data.text}</h3>
-                        <form>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id={annotation.data.id} value="option1" />
-                            <label class="form-check-label" for="exampleRadios1">
-                                Default radio
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id={annotation.data.id} value="option2" />
-                            <label class="form-check-label" for="exampleRadios2">
-                                Second default radio
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id={annotation.data.id} value="option2" />
-                            <label class="form-check-label" for="exampleRadios2">
-                                Second default radio
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id={annotation.data.id} value="option2" />
-                            <label class="form-check-label" for="exampleRadios2">
-                                Second default radio
-                            </label>
-                        </div>
-                        <input type="text"/>
-                        </form>
-                    </div>
-                ))}
-            </div>
-        );
+            
+<PDFDownloadLink document={<MyDocument issues={props.issues}/>} fileName="fee_acceptance.pdf">
+  {({ blob, url, loading, error }) => (loading ? 'Loading document...' : <button className="btn btn-outline-dark"> Download Report</button>)}
+</PDFDownloadLink>
 
-    }
+
+        </div>
+    );
+
+
 }
 
 export default AnnotationIssues;

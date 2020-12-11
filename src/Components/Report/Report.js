@@ -30,20 +30,20 @@ class Report extends React.Component {
         return (
             <div className="report">
                 <div class="row">
-                    <div class="col-9">
+                    <div class="col-12">
 
                         {this.state.file != null ?
-                            <div>
-                                <h2 className="text-left">Highlight problem areas</h2>
-                                <ImageAnnotation img={this.state.file}/>
-                                <div className="d-flex align-items-center justify-content-center mx-auto col-10">
-                                <form>
-                                    <div class="form-group ">
-                                        <label for="exampleFormControlFile1">Change Image</label>
-                                        <input type="file" accept="image/*" class="form-control-file" onChange={this.imgChange} id="exampleFormControlFile1" />
-                                    </div>
-                                </form>
-                            </div>
+                            <div className="imgAnnot">
+
+                                <ImageAnnotation img={this.state.file} />
+                                <div className="d-flex align-items-center justify-content-center mx-auto col-11">
+                                    <form>
+                                        <div class="form-group ">
+                                            <label for="exampleFormControlFile1">Change Image</label>
+                                            <input type="file" accept="image/*" class="form-control-file" onChange={this.imgChange} id="exampleFormControlFile1" />
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
 
                             :
@@ -58,7 +58,7 @@ class Report extends React.Component {
                             </div>
                         }
                     </div>
-                  
+
                 </div>
             </div>
         );

@@ -3,4 +3,9 @@
     padding: 2%;
     border-radius: 5%;
     margin-top: 5%;
+    width: 100%;
+}
+
+.issueHeader{
+    cursor: pointer;
 }
