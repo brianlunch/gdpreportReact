@@ -10,7 +10,7 @@ const issuesJSON =
         {
           "value": "Consent was not Specific and informed",
           "law": "Article 2.5",
-          "lawDescription": "The consent needs to be specofoc and informed. This includes the controllers identity, the purpose of processing the data, the processing activities and the right to withdraw at any time must be stated."
+          "lawDescription": "The consent needs to be specific and informed. This includes the controllers identity, the purpose of processing the data, the processing activities and the right to withdraw at any time must be stated."
         },
         {
           "value": "Unambiguous indication (by statement or clear affirmative action)",

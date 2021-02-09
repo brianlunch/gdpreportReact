@@ -3,6 +3,7 @@ import ImageAnnotation from '../ImageAnnotation/ImageAnnotation';
 import './Report.css'
 
 
+
 class Report extends React.Component {
     constructor(props) {
         super(props);
@@ -53,6 +54,7 @@ class Report extends React.Component {
                                     <div class="form-group ">
                                         <label for="exampleFormControlFile1">Upload Screenshot of Website</label>
                                         <input type="file" accept="image/*" class="form-control-file" onChange={this.imgChange} id="exampleFormControlFile1" />
+                                        
                                     </div>
                                 </form>
                             </div>

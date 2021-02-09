@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Router basename={process.env.PUBLIC_URL} history={history}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Report} />
           <Route exact path="/report" component={Report} />
           <Route exact path="/reported" component={Reported}/>
         </Switch>
