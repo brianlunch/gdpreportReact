@@ -8,13 +8,11 @@ import './AnnotationIssue.css'
 function isChecked(props, box, issueNo) {
 
     if (props.issues[box] != undefined) {
-
         if (props.issues[box].issue[issueNo] == true) {
             return true;
         }
     }
-
-    else return false
+    else return false;
 }
 
 function handleChange(props, event) {
@@ -23,6 +21,7 @@ function handleChange(props, event) {
     let x = event.target.name;
 
     if (props.issues.some(e => e.id === event.target.id)) {
+
         let array = props.issues[props.issues.findIndex(x => x.id === event.target.id)].issue
         let comments = props.issues[props.issues.findIndex(x => x.id === event.target.id)].comments
         array[x] = !array[x];
@@ -96,10 +95,10 @@ const AnnotationIssue = (props) => {
 
     return (
         <div
-            onMouseOver={props.mouseOver(props.annotation.data.id)}
-            onMouseOut={props.mouseOut(props.annotation.data.id)}
+        onMouseOver={props.mouseOver(props.annotation.data.id)}
+        onMouseOut={props.mouseOut(props.annotation.data.id)}
             key={props.annotation.data.id}
-            className="annotationIssue col-12"
+            className="annotationIssue col-11"
         >
             <div
                 onClick={() => setOpen(!open)}
@@ -108,17 +107,29 @@ const AnnotationIssue = (props) => {
                 className="issueHeader row"
                 name={props.annotation.data.id}
             >
-                <div class="col-10">
+                <div class="col-2 text-left">
                     <h3>{props.annotation.data.text}</h3>
                 </div>
 
-                <h3 className="float-left">{open ? <FaChevronUp /> : <FaChevronDown />}</h3>
+               
+                <div class="col-10 text-right">
+                <h3 className="">{open ? <FaChevronUp /> : <FaChevronDown />}</h3>
+                </div>
 
             </div>
-            <Collapse in={open}>
+            <Collapse in={open} className="options">
                 <div id={props.annotation.data.id}>
 
                     <h3></h3>
+                    <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" name="duration">
+                            <option selected>Annotation Domain</option>
+                            <option value="3 Months">Common Issues</option>
+                            <option value="6 Months">Legal</option>
+                            <option value="9 Months">UI/UX Design</option>
+                            <option value="12 Months">Privacy</option>
+                            
+                         </select>
+                         <br/><br/>
                     <form onChange={e => handleChange(props, e)}>
                         {issues.map((issue, index) => <div class="form-check">
                             <input class="form-check-input" type="checkbox" name={index} id={props.annotation.data.id} value={issue.value} />

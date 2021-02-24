@@ -7,3 +7,12 @@
     padding: 10px;
 }
 
+.titleRow{
+    margin-bottom: 2%;
+}
+
+.imageSide{
+    border-right: 1px solid black;
+}
+
+html{overflow-y: hidden;}

@@ -75,11 +75,15 @@ function renderHighlight({ annotation, active }) {
                         && 'inset 0 0 0 5px red',
                     color: active
                         && 'red',
-                    fontSize: active && 20
-
+                    fontSize: active && 20,
+                    fontSize: 20,
+                    fontWeight:700
                 }}
             >
-                {annotation.data.text}
+                
+{annotation.data.text}
+      
+               
             </Box>
         )
     }
@@ -89,20 +93,23 @@ function renderHighlight({ annotation, active }) {
                 key={annotation.data.id}
                 geometry={geometry}
                 style={{
-                    border: 'solid 5px lime',
-                    height: 10,
+                    border: 'solid 3px lime',
+                    height: 60,
                     color: 'lime',
-                    width: 10,
+                    width: 60,
                     backgroundColor: 'lime',
                     boxShadow: active
-                        && 'inset 0 0 0 5px red',
+                        && 'inset 0 0 0 3px red',
                     color: active
                         && 'red',
                     fontSize: active && 30
 
                 }}
             >
+                
                 {annotation.data.text}
+
+              
             </Box>
         )
     }
@@ -268,12 +275,12 @@ export default class ImageAnnotation extends Component {
         return (
             <div className="">
                 <div class="row annotateRow">
-                    <div class="col-9">
-                        <div class="row">
-                            <div class="col-6">
-                                <h2>Highlight Problem Areas</h2>
+                    <div class="col-8 imageSide">
+                        <div class="row titleRow">
+                            <div class="col-10 text-left">
+                                <h4>Click and drag mouse to highlight problematic areas of the image.</h4>
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 text-right">
                                 <button className="btn btn-outline-dark" onClick={this.clearAll}>Clear All</button>
                             </div>
                             {/*
@@ -308,7 +315,7 @@ export default class ImageAnnotation extends Component {
                             renderOverlay={renderOverlay}
                         />
                     </div>
-                    <div class="col-3  text-left">
+                    <div class="col-4  text-left">
                         <h4>Annotations</h4>
                         <AnnotationIssues
                             className=""

@@ -44,7 +44,7 @@ function AnnotationIssues(props) {
     
     return (
         <div>
-
+<div className="maxH">
             {props.annotations.map(annotation => (
                 <div>
                     <AnnotationIssue annotation={annotation} 
@@ -54,13 +54,13 @@ function AnnotationIssues(props) {
                     />
                 </div>
             ))}
+</div>
 
-
-            
+<div className="row justify-content-center">
 <PDFDownloadLink document={<MyDocument issues={props.issues}/>} fileName="fee_acceptance.pdf">
-  {({ blob, url, loading, error }) => (loading ? 'Loading document...' : <button className="btn btn-outline-dark"> Download Report</button>)}
+  {({ blob, url, loading, error }) => (loading ? 'Loading document...' : <button className="btn btn-outline-dark"> Generate Report</button>)}
 </PDFDownloadLink>
-
+</div>
 
         </div>
     );
