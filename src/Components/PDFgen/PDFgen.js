@@ -60,13 +60,14 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 const MyDocument = (props) => {
-
+    console.log(props);
     const issues = props.issues;
 
     return(
     <Document>
         <Page size="A4" style={styles.page}>
             <Text>Consent Report</Text>
+            
             <View>
                 <View style={styles.block}>
                 <Text>Url: </Text>

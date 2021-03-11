@@ -30,7 +30,7 @@ function renderSelector({ annotation, active, type }) {
     const { geometry } = annotation
     if (!geometry) return null
 
-    
+
 
     if (geometry.type == RectangleSelector.TYPE) {
         return (
@@ -77,13 +77,13 @@ function renderHighlight({ annotation, active }) {
                         && 'red',
                     fontSize: active && 20,
                     fontSize: 20,
-                    fontWeight:700
+                    fontWeight: 700
                 }}
             >
-                
-{annotation.data.text}
-      
-               
+
+                {annotation.data.text}
+
+
             </Box>
         )
     }
@@ -106,10 +106,10 @@ function renderHighlight({ annotation, active }) {
 
                 }}
             >
-                
+
                 {annotation.data.text}
 
-              
+
             </Box>
         )
     }
@@ -194,16 +194,17 @@ export default class ImageAnnotation extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { annotations: [],
+        this.state = {
+            annotations: [],
             annotation: {},
             activeAnnotations: [],
             issues: [],
-            idk:[]
+            idk: []
         };
     }
-    
-       
-     
+
+
+
     componentDidUpdate(prevProps) {
         // Typical usage (don't forget to compare props):
         if (this.props.img !== prevProps.img) {
@@ -271,7 +272,7 @@ export default class ImageAnnotation extends Component {
     }
 
     render() {
-        
+
         return (
             <div className="">
                 <div class="row annotateRow">
@@ -297,28 +298,32 @@ export default class ImageAnnotation extends Component {
                             */
                             }
                         </div>
-                        <Annotation
-                            src={this.props.img}
-                            alt='Two pebbles anthropomorphized holding hands'
-                            className="annotation"
-                            annotations={this.state.annotations}
-                            activeAnnotationComparator={this.activeAnnotationComparator}
-                            activeAnnotations={this.state.activeAnnotations}
-                            type={this.state.type}
-                            value={this.state.annotation}
-                            onChange={this.onChange}
-                            onSubmit={this.onSubmit}
-                            renderSelector={renderSelector}
-                            renderEditor={renderEditor}
-                            renderHighlight={renderHighlight}
-                            renderContent={renderContent}
-                            renderOverlay={renderOverlay}
-                        />
+                        <div className="annotation">
+                            <Annotation
+                                src={this.props.img}
+                                alt='Two pebbles anthropomorphized holding hands'
+
+                                annotations={this.state.annotations}
+                                activeAnnotationComparator={this.activeAnnotationComparator}
+                                activeAnnotations={this.state.activeAnnotations}
+                                type={this.state.type}
+                                value={this.state.annotation}
+                                onChange={this.onChange}
+                                onSubmit={this.onSubmit}
+                                renderSelector={renderSelector}
+                                renderEditor={renderEditor}
+                                renderHighlight={renderHighlight}
+                                renderContent={renderContent}
+                                renderOverlay={renderOverlay}
+                            />
+                        </div>
+
                     </div>
                     <div class="col-4  text-left">
                         <h4>Annotations</h4>
                         <AnnotationIssues
                             className=""
+                            image={this.props.img}
                             annotations={this.state.annotations}
                             activeAnnotations={this.state.activeAnnotations}
                             issues={this.state.issues}

@@ -16,3 +16,7 @@
 }
 
 html{overflow-y: hidden;}
+
+.annotation{
+    cursor: crosshair;
+}
