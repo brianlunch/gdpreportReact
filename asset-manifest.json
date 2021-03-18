@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/gdpreportReact/static/css/main.807e2bc2.chunk.css",
-    "main.js": "/gdpreportReact/static/js/main.3ee73b6b.chunk.js",
-    "main.js.map": "/gdpreportReact/static/js/main.3ee73b6b.chunk.js.map",
-    "runtime-main.js": "/gdpreportReact/static/js/runtime-main.64be1d7e.js",
-    "runtime-main.js.map": "/gdpreportReact/static/js/runtime-main.64be1d7e.js.map",
+    "main.css": "/gdpreportReact/static/css/main.69987833.chunk.css",
+    "main.js": "/gdpreportReact/static/js/main.83083a46.chunk.js",
+    "main.js.map": "/gdpreportReact/static/js/main.83083a46.chunk.js.map",
+    "runtime-main.js": "/gdpreportReact/static/js/runtime-main.ec5881e4.js",
+    "runtime-main.js.map": "/gdpreportReact/static/js/runtime-main.ec5881e4.js.map",
     "static/css/2.1a02f21c.chunk.css": "/gdpreportReact/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.354e5a7f.chunk.js": "/gdpreportReact/static/js/2.354e5a7f.chunk.js",
-    "static/js/2.354e5a7f.chunk.js.map": "/gdpreportReact/static/js/2.354e5a7f.chunk.js.map",
-    "static/js/3.f43c8c66.chunk.js": "/gdpreportReact/static/js/3.f43c8c66.chunk.js",
-    "static/js/3.f43c8c66.chunk.js.map": "/gdpreportReact/static/js/3.f43c8c66.chunk.js.map",
+    "static/js/2.dfa25459.chunk.js": "/gdpreportReact/static/js/2.dfa25459.chunk.js",
+    "static/js/2.dfa25459.chunk.js.map": "/gdpreportReact/static/js/2.dfa25459.chunk.js.map",
+    "static/js/3.d152b859.chunk.js": "/gdpreportReact/static/js/3.d152b859.chunk.js",
+    "static/js/3.d152b859.chunk.js.map": "/gdpreportReact/static/js/3.d152b859.chunk.js.map",
     "index.html": "/gdpreportReact/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/gdpreportReact/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.807e2bc2.chunk.css.map": "/gdpreportReact/static/css/main.807e2bc2.chunk.css.map",
-    "static/js/2.354e5a7f.chunk.js.LICENSE.txt": "/gdpreportReact/static/js/2.354e5a7f.chunk.js.LICENSE.txt",
+    "static/css/main.69987833.chunk.css.map": "/gdpreportReact/static/css/main.69987833.chunk.css.map",
+    "static/js/2.dfa25459.chunk.js.LICENSE.txt": "/gdpreportReact/static/js/2.dfa25459.chunk.js.LICENSE.txt",
     "static/media/IrishTimes.537ec91e.PNG": "/gdpreportReact/static/media/IrishTimes.537ec91e.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.64be1d7e.js",
+    "static/js/runtime-main.ec5881e4.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.354e5a7f.chunk.js",
-    "static/css/main.807e2bc2.chunk.css",
-    "static/js/main.3ee73b6b.chunk.js"
+    "static/js/2.dfa25459.chunk.js",
+    "static/css/main.69987833.chunk.css",
+    "static/js/main.83083a46.chunk.js"
   ]
 }
