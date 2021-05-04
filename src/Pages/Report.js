@@ -3,9 +3,6 @@ import Navbar from '../Components/transparent-nav/Navbar'
 import Report  from '../Components/Report/Report'
 import './Report.css'
 
-function setScreenshotUrl(url) {
-    document.getElementById('target').src = url;
-  }
 
 class ReportPage extends React.Component {
     constructor(props) {
@@ -18,8 +15,9 @@ class ReportPage extends React.Component {
     render() {
         return (
             <div>
-                <Navbar/>
                 <Report/>
+
+                
             </div>
         );
     }

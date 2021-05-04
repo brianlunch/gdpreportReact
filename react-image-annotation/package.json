@@ -1,0 +1,98 @@
+{
+  "_from": "react-image-annotation",
+  "_id": "react-image-annotation@0.9.10",
+  "_inBundle": false,
+  "_integrity": "sha512-+g8RXqGoaCXfZfhGPG1MeYSo4Bn5iTwgL8z+Gl4P+j1CFHH9yQGGV6WlgCy8v/FAC6JyQ2ThPwBoj65kSq7j2w==",
+  "_location": "/react-image-annotation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-image-annotation",
+    "name": "react-image-annotation",
+    "escapedName": "react-image-annotation",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-image-annotation/-/react-image-annotation-0.9.10.tgz",
+  "_shasum": "c43b3a1c6d28f30a47ded3c27233a51ffb90461b",
+  "_spec": "react-image-annotation",
+  "_where": "C:\\Users\\brian\\OneDrive\\Websites\\GDPReport",
+  "author": {
+    "name": "Arian Allenson Valdez",
+    "email": "arianallensonv@gmail.com",
+    "url": "http://arianv.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/Secretmapper/react-image-annotation/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "styled-components": "^3.1.6"
+  },
+  "deprecated": false,
+  "description": "react-image-annotation React component",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "gh-pages": "^1.1.0",
+    "nwb": "0.21.x",
+    "raw-loader": "^0.5.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-syntax-highlighter": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "homepage": "https://github.com/Secretmapper/react-image-annotation#readme",
+  "keywords": [
+    "react-component"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "name": "react-image-annotation",
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.3",
+    "react-dom": ">=0.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Secretmapper/react-image-annotation.git"
+  },
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "deploy": "gh-pages -d demo/dist",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "standard": {
+    "env": [
+      "jest",
+      "jasmine"
+    ],
+    "globals": [
+      "fetch",
+      "URL"
+    ],
+    "parser": "babel-eslint"
+  },
+  "version": "0.9.10"
+}

@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-image-annotation/lib/components/Annotation.js b/node_modules/react-image-annotation/lib/components/Annotation.js
+index 209c1b0..865f790 100644
+--- a/node_modules/react-image-annotation/lib/components/Annotation.js
++++ b/node_modules/react-image-annotation/lib/components/Annotation.js
+@@ -223,6 +223,7 @@ exports.default = (0, _compose2.default)((0, _isMouseHovering2.default)(), (0, _
+       _react2.default.createElement(Img, {
+         className: props.className,
+         style: props.style,
++		id: props.id,
+         alt: props.alt,
+         src: props.src,
+         draggable: false,

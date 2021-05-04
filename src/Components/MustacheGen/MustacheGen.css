@@ -1,0 +1,13 @@
+.boxBorder{
+    border: 1px solid #000000;
+    margin:2%;
+    padding:2%;
+}
+
+.custom-select2{
+    font-size: .9rem !important;
+    height: calc(1.5em + 3px) !important;
+    padding: 0 !important;
+    margin-bottom:5%;
+    
+ }

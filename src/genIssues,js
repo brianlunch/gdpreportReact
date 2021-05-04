@@ -1,0 +1,15 @@
+var data = getJSON('https://spreadsheets.google.com/feeds/cells/1W2YifW1P675zIKGgF2hrcwq678gzzeX_qEDpxQvvOS4/od6/public/basic?alt=json', function(data) {
+   
+    //console.log(Object.keys(data));
+    //console.log(Object.keys(data.feed));
+    //console.log(Object.keys(data.feed.entry));
+    
+    // Entries are indexed from top left to bottom right of all non null cells in the spreadsheet
+    
+    //console.log(data.feed.entry[0].content.$t);
+    for (i = 0; i < data.feed.entry.length; i++) {
+    	console.log(data.feed.entry[i].content.$t);
+		}
+});
+
+export default data;

@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 const MyDocument = (props) => {
-    console.log(props);
+    
     const issues = props.issues;
 
     return(
@@ -79,6 +79,9 @@ const MyDocument = (props) => {
             <Text>Image Issues</Text>
             </View>
 
+
+
+{props.tester}
             <View >
 
                 {issues.map((issue1, index) => {

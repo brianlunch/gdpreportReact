@@ -4,25 +4,70 @@ const issues =
       "domain": "Regular Language",
       "terms": [
         {
-          "value": "Consent Buttons are different colours.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "value": "Cannot View Site without Accepting",
+          "laws": [
+
+            {
+              "lawName": "GDPR Recital 42 ",
+              "lawDescription": "Consent should not be regarded as freely given if the data subject has no genuine or free choice or is unable to refuse or withdraw consent without detriment."
+            }
+          ]
         },
         {
           "value": "There is no reject button.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4 (11)",
+              "lawDescription": "Consent' of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her. If there is no reject button an affirmative action to not consent cannot be made."
+            }
+          ]
         },
         {
-          "value": "I do not know what I am consenting to.",
-          "lawName": "Article 2.5",
-          "lawDescription": "The consent needs to be specific and informed. This includes the controllers identity, the purpose of processing the data, the processing activities and the right to withdraw at any time must be stated."
+          "value": "Some options are pre-selected.",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4 (11)",
+              "lawDescription": "consent' of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her. If choices are pre-selected an affirmative choice to accept these has not been made."
+            }
+          ]
         },
         {
-          "value": "Choice 'accept all' is pre-highlighted",
-          "lawName": "Recital 32",
-          "lawDescription": "“Consent should be given by a clear affirmative act… such as by a written statement, including by electronic means, or an oral statement. This could include ticking a box when visiting an internet website, choosing technical settings for information society services or another statement or conduct which clearly indicates in this context the data subject’s acceptance of the proposed processing of his or her personal data. Silence, preticked boxes or inactivity should not therefore constitute consent.”"
+          "value": "There is not Separate consent per purpose",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4 (11)",
+              "lawDescription": "consent' of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her. If there is not seperate consent per purpose the consent is not specific."
+            },
+            {
+              "lawName": "GDPR Article 6(1) a ",
+              "lawDescription": "Processing shall be lawful only if  the data subject has given consent to the processing of his or her personal data for one or more specific purposes. In this case the user could not specify consent for a specific purpose."
+            }
+          ]
+        },
+        {
+          "value": "The language used is unclear/hard to understand",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 7(2)",
+              "lawDescription": "If the data subject’s consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding."
+            }
+          ]
+        },
+        {
+          "value": "Impossible to change my decision",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 7(3)",
+              "lawDescription": "The data subject shall have the right to withdraw his or her consent at any time. 2The withdrawal of consent shall not affect the lawfulness of processing based on consent before its withdrawal. 3Prior to giving consent, the data subject shall be informed thereof. 4It shall be as easy to withdraw as to give consent."
+            }
+          ]
         }
+
       ]
     },
 
@@ -30,24 +75,86 @@ const issues =
       "domain": "Law",
       "terms": [
         {
-          "value": "Law Consent Buttons are different colours.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "value": "Requires merging into a contract.",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 7 (2)",
+              "lawDescription": "If the data subject’s consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding."
+            },
+            {
+              "lawName": "GDPR Article 7 (4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether, inter alia, the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract."
+            },
+            {
+              "lawName": "GDPR Recital 43",
+              "lawDescription": "In order to ensure that consent is freely given, consent should not provide a valid legal ground for the processing of personal data in a specific case where there is a clear imbalance between the data subject and the controller, in particular where the controller is a public authority and it is therefore unlikely that consent was freely given in all the circumstances of that specific situation. 2Consent is presumed not to be freely given if it does not allow separate consent to be given to different personal data processing operations despite it being appropriate in the individual case, or if the performance of a contract, including the provision of a service, is dependent on the consent despite such consent not being necessary for such performance."
+            }
+          ]
         },
         {
-          "value": "Law There is no reject button.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "value": "Consent was not Freely Given",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4(11)",
+              "lawDescription": "Consent of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her."
+            },
+            {
+              "lawName": "GDPR Article 7(4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether, inter alia, the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract."
+            }
+          ]
         },
         {
-          "value": "Law I do not know what I am consenting to.",
-          "lawName": "Article 2.5",
-          "lawDescription": "The consent needs to be specific and informed. This includes the controllers identity, the purpose of processing the data, the processing activities and the right to withdraw at any time must be stated."
+          "value": "Consent was not Specific",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4(11)",
+              "lawDescription": "Consent of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her."
+            }
+          ]
         },
         {
-          "value": "Law Choice 'accept all' is pre-highlighted",
-          "lawName": "Recital 32",
-          "lawDescription": "“Consent should be given by a clear affirmative act… such as by a written statement, including by electronic means, or an oral statement. This could include ticking a box when visiting an internet website, choosing technical settings for information society services or another statement or conduct which clearly indicates in this context the data subject’s acceptance of the proposed processing of his or her personal data. Silence, preticked boxes or inactivity should not therefore constitute consent.”"
+          "value": "Consent was not informed.",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4(11)",
+              "lawDescription": "Consent of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her."
+            }
+          ]
+        },
+        {
+          "value": "Consent was ambigious.",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 4(11)",
+              "lawDescription": "Consent of the data subject means any freely given, specific, informed and unambiguous indication of the data subject's wishes by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her."
+            }
+          ]
+        },
+        {
+          "value": "Not readable and accessible",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 7(2)",
+              "lawDescription": "If the data subject’s consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding."
+            }
+          ]
+        },
+        {
+          "value": "Consent was not Revocable",
+          "laws": [
+
+            {
+              "lawName": "GDPR Article 7(3)",
+              "lawDescription": "The data subject shall have the right to withdraw his or her consent at any time. 2The withdrawal of consent shall not affect the lawfulness of processing based on consent before its withdrawal. 3Prior to giving consent, the data subject shall be informed thereof. 4It shall be as easy to withdraw as to give consent."
+            }
+          ]
         }
       ]
     },
@@ -57,23 +164,47 @@ const issues =
       "terms": [
         {
           "value": "UI Consent Buttons are different colours.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "laws": [
+
+            {
+              "lawName": "Article 7(4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+            },
+            {
+              "lawName": "Article 7(5)",
+              "lawDescription": " 2 Assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+            }
+          ]
         },
         {
           "value": "UI There is no reject button.",
-          "lawName": "Article 7(4)",
-          "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+          "laws": [
+
+            {
+              "lawName": "Article 7(4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+            }
+          ]
         },
         {
           "value": "UI I do not know what I am consenting to.",
-          "lawName": "Article 2.5",
-          "lawDescription": "The consent needs to be specific and informed. This includes the controllers identity, the purpose of processing the data, the processing activities and the right to withdraw at any time must be stated."
+          "laws": [
+
+            {
+              "lawName": "Article 7(4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+            }
+          ]
         },
         {
           "value": "UI Choice 'accept all' is pre-highlighted",
-          "lawName": "Recital 32",
-          "lawDescription": "“Consent should be given by a clear affirmative act… such as by a written statement, including by electronic means, or an oral statement. This could include ticking a box when visiting an internet website, choosing technical settings for information society services or another statement or conduct which clearly indicates in this context the data subject’s acceptance of the proposed processing of his or her personal data. Silence, preticked boxes or inactivity should not therefore constitute consent.”"
+          "laws": [
+
+            {
+              "lawName": "Article 7(4)",
+              "lawDescription": "When assessing whether consent is freely given, utmost account shall be taken of whether… the performance of a contract, including the provision of a service, is conditional on consent to the processing of personal data that is not necessary for the performance of that contract"
+            }
+          ]
         }
       ]
     }

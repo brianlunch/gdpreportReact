@@ -2,9 +2,14 @@
     background-color: lightgrey;
     min-height: 50vh;
 }
-.report{
-    margin-top: 5%;
+
+
+.nav-link.active{
+    border: 1px solid darkslateblue !important;
+    border-bottom: none;
+    color: darkslateblue !important;
 }
+
 .uploadedImage{
     width:100%;
     height: auto;
@@ -13,3 +18,20 @@
 .imgAnnot{
     padding-left: 3%;
 }
+
+html {
+    overflow-y: scroll; 
+  }
+
+ .genMsg{
+    display: none;
+ }
+
+ @media print
+{  
+    .genMsg{
+        display: block;
+     } 
+}
+
+  

@@ -1,0 +1,17 @@
+.annotBox{
+    border: 1px solid black;
+    margin:2%;
+    padding:2%;
+}
+
+@media print
+{    
+    .doc
+    {
+        display: block !important;
+    }    
+}
+
+.docPic{
+    border: 1px solid black;
+}

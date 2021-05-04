@@ -1,10 +1,7 @@
 .annotation{
 
-    border: 1px solid black;
-}
-
-.annotateRow{
-    padding: 10px;
+    border: 2px solid darkslateblue !important;
+   
 }
 
 .titleRow{
@@ -12,11 +9,99 @@
 }
 
 .imageSide{
-    border-right: 1px solid black;
+    margin-bottom: 4%;
 }
 
-html{overflow-y: hidden;}
+.annotsDiv{
+    padding-left:2%;
+}
+
+.text-theme{
+    color: darkslateblue !important;
+}
+
+.btn-theme{
+
+    color: darkslateblue !important;
+    border-color: darkslateblue !important;
+    border-color: darkslateblue;
+    font-weight: 500 !important;
+}
+
+.btn-theme:hover{
+
+    color: white !important;
+    border-color: darkslateblue !important;
+    background-color: darkslateblue !important;
+}
+
 
 .annotation{
     cursor: crosshair;
+}
+
+/* The heart of the matter */
+.testimonial-group > .row {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .testimonial-group > .row > .col-4 {
+    display: inline-block;
+    vertical-align:middle;
+    flex: 0 0 30%;
+    max-width: 30%;
+    
+  }
+
+  .lower{
+      background-color:lightcyan;
+  }
+  
+
+.doc{
+    display: block !important;
+    width:70%;
+    padding:2%;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-select2{
+    font-size: .9rem !important;
+    height: calc(1.5em + 3px) !important;
+    padding: 0 !important;
+    width: 100%;
+    
+ }
+
+
+
+@media print
+{    
+    .tab-pane{
+        display: block !important;
+    }
+
+    .fade:not(.show) {
+        opacity: 100 !important;
+    }
+
+   
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .doc{
+        display: block !important;
+        width:100% !important;
+        border: none !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+
 }

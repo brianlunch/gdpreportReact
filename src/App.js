@@ -10,9 +10,9 @@ import './App.css';
 import Reported from './Pages/Reported';
 
 function App() {
-  console.log(process.env.PUBLIC_URL);
   return (
     <div className="App">
+      
       <Router basename={process.env.PUBLIC_URL} history={history}>
         <Switch>
           <Route exact path="/" component={Report} />
